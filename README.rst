@@ -14,9 +14,7 @@ Requirements
 
 The sample supports the following boards:
 
-.. table-from-rows:: nRF9160DK + cSLIM shield
-   :header: heading
-   :rows: cSLIMns
+nRF9160DK + cSLIM shield
 
 
 Overview
