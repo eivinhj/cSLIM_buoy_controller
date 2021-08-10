@@ -1,1 +1,0 @@
-osource "C:/Users/eivin/ncs/v1.5.1/zephyr/soc/$(ARCH)/*/Kconfig.defconfig"
