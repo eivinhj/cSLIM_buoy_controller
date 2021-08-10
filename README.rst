@@ -112,8 +112,9 @@ The following command builds the application for nRF9160 DK and cSLIM shield:
 
     west build -b cSLIMns -p
      
-* add -p (prestine) at end if this is the first time building, or there are changes in file structure etc. 
-* Upload using     
+add -p (prestine) at end if this is the first time building, or there are changes in file structure etc. 
+
+Upload using     
  .. code-block:: console
 
    west flash
