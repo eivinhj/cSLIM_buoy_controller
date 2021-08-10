@@ -32,7 +32,7 @@ Configuration
 MQTT Client options
 =====================
 
-Check and configure the following configuration options for the application:
+Check and configure the following configuration options for the application in proj.conf:
 
 .. option:: CONFIG_MQTT_BROKER_HOSTNAME - MQTT Broker host name
 
@@ -112,8 +112,9 @@ The following command builds the application for nRF9160 DK and cSLIM shield:
 
     west build -b cSLIMns -p
      
-* add -p (prestine) at end if this is the first time building, or changes in file structure etc. are made
-     
+add -p (prestine) at end if this is the first time building, or there are changes in file structure etc. 
+
+Upload using     
  .. code-block:: console
 
    west flash
@@ -121,15 +122,13 @@ The following command builds the application for nRF9160 DK and cSLIM shield:
 Testing
 =======
 
-test_sample
-
 1. Connect USB
 #. Open terminal (Lowest COM number of device)
 #. Reset the module.
 
 #. Observe that the display illuminates, showing cSLIM at the top and output for different modules, including GPS, LoRa, LTE and TBR.
-#. Use an MQTT client like `Mosquitto`_ to subscribe to  the broker and verify that IoF messages are received.
-   Observe that the development kit publishes all the data to :option:`CONFIG_MQTT_SUB_TOPIC` on :option:`CONFIG_MQTT_PUB_TOPIC`.
+#. Use an MQTT client like 'Mosquitto' to subscribe to  the broker and verify that IoF messages are received.
+   Observe that the development kit publishes all the data to the topic set by CONFIG_MQTT_SUB_TOPIC.
 
 Troubleshooting
 ===============
@@ -140,6 +139,6 @@ If you experience problems connecting to the MQTT broker, make sure the MQTT bro
 Dependencies
 ************
 
-This application uses the Nrf Connect SDK v. 1.5.1, however newer versions might also be supported. 
+This application has been tested using Nrf Connect SDK v. 1.5.1, however newer versions might also be supported. 
 
 
