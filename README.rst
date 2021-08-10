@@ -122,8 +122,6 @@ Upload using
 Testing
 =======
 
-test_sample
-
 1. Connect USB
 #. Open terminal (Lowest COM number of device)
 #. Reset the module.
