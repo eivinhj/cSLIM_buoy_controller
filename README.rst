@@ -32,7 +32,7 @@ Configuration
 MQTT Client options
 =====================
 
-Check and configure the following configuration options for the application:
+Check and configure the following configuration options for the application in proj.conf:
 
 .. option:: CONFIG_MQTT_BROKER_HOSTNAME - MQTT Broker host name
 
@@ -127,8 +127,8 @@ Testing
 #. Reset the module.
 
 #. Observe that the display illuminates, showing cSLIM at the top and output for different modules, including GPS, LoRa, LTE and TBR.
-#. Use an MQTT client like `Mosquitto`_ to subscribe to  the broker and verify that IoF messages are received.
-   Observe that the development kit publishes all the data to :option:`CONFIG_MQTT_SUB_TOPIC` on :option:`CONFIG_MQTT_PUB_TOPIC`.
+#. Use an MQTT client like 'Mosquitto' to subscribe to  the broker and verify that IoF messages are received.
+   Observe that the development kit publishes all the data to CNFIG_MQTT_SUB_TOPIC on CONFIG_MQTT_PUB_TOPIC.
 
 Troubleshooting
 ===============
