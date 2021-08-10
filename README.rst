@@ -128,7 +128,7 @@ Testing
 
 #. Observe that the display illuminates, showing cSLIM at the top and output for different modules, including GPS, LoRa, LTE and TBR.
 #. Use an MQTT client like 'Mosquitto' to subscribe to  the broker and verify that IoF messages are received.
-   Observe that the development kit publishes all the data to CNFIG_MQTT_SUB_TOPIC on CONFIG_MQTT_PUB_TOPIC.
+   Observe that the development kit publishes all the data to the topic set by CONFIG_MQTT_SUB_TOPIC.
 
 Troubleshooting
 ===============
@@ -139,6 +139,6 @@ If you experience problems connecting to the MQTT broker, make sure the MQTT bro
 Dependencies
 ************
 
-This application uses the Nrf Connect SDK v. 1.5.1, however newer versions might also be supported. 
+This application has been tested using Nrf Connect SDK v. 1.5.1, however newer versions might also be supported. 
 
 
