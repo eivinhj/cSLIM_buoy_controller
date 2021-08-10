@@ -1,0 +1,11 @@
+set(spm_KERNEL_HEX_NAME zephyr.hex)
+set(spm_ZEPHYR_BINARY_DIR C:/masterSource/cSLIM/build/spm/zephyr)
+set(spm_KERNEL_ELF_NAME zephyr.elf)
+list(APPEND spm_BUILD_BYPRODUCTS C:/masterSource/cSLIM/build/spm/zephyr/zephyr.hex)
+list(APPEND spm_BUILD_BYPRODUCTS C:/masterSource/cSLIM/build/spm/zephyr/zephyr.elf)
+list(APPEND spm_BUILD_BYPRODUCTS
+    C:/masterSource/cSLIM/build/spm/libspmsecureentries.a)
+list(APPEND spm_PM_YML_DEP_FILES C:/Users/eivin/ncs/v1.5.1/nrf/samples/spm/pm.yml)
+list(APPEND spm_PM_YML_FILES C:/masterSource/cSLIM/build/spm/zephyr/include/generated/pm.yml)
+list(APPEND spm_PM_YML_DEP_FILES C:/Users/eivin/ncs/v1.5.1/nrf/subsys/partition_manager/pm.yml.trustzone)
+list(APPEND spm_PM_YML_FILES C:/masterSource/cSLIM/build/spm/modules/nrf/subsys/partition_manager/pm.yml.trustzone)

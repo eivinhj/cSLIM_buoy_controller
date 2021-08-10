@@ -1,0 +1,13 @@
+# Target labels
+ spm_subimage
+# Source files and their labels
+C:/masterSource/cSLIM/build/modules/nrf/samples/CMakeFiles/spm_subimage
+C:/masterSource/cSLIM/build/modules/nrf/samples/CMakeFiles/spm_subimage.rule
+C:/masterSource/cSLIM/build/modules/nrf/samples/CMakeFiles/spm_subimage-complete.rule
+C:/masterSource/cSLIM/build/modules/nrf/samples/spm_subimage-prefix/src/spm_subimage-stamp/spm_subimage-install.rule
+C:/masterSource/cSLIM/build/modules/nrf/samples/spm_subimage-prefix/src/spm_subimage-stamp/spm_subimage-mkdir.rule
+C:/masterSource/cSLIM/build/modules/nrf/samples/spm_subimage-prefix/src/spm_subimage-stamp/spm_subimage-download.rule
+C:/masterSource/cSLIM/build/modules/nrf/samples/spm_subimage-prefix/src/spm_subimage-stamp/spm_subimage-update.rule
+C:/masterSource/cSLIM/build/modules/nrf/samples/spm_subimage-prefix/src/spm_subimage-stamp/spm_subimage-patch.rule
+C:/masterSource/cSLIM/build/modules/nrf/samples/spm_subimage-prefix/src/spm_subimage-stamp/spm_subimage-configure.rule
+C:/masterSource/cSLIM/build/modules/nrf/samples/spm_subimage-prefix/src/spm_subimage-stamp/spm_subimage-build.rule

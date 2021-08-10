@@ -1,0 +1,3 @@
+osource "C:/Users/eivin/ncs/v1.5.1/nrf/boards/shields/*/Kconfig.defconfig"
+osource "C:/Users/eivin/ncs/v1.5.1/zephyr/boards/shields/*/Kconfig.defconfig"
+osource "C:/Users/eivin/ncs/v1.5.1/zephyr/boards/shields/*/Kconfig.defconfig"

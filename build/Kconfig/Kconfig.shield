@@ -1,0 +1,4 @@
+osource "C:/masterSource/cSLIM/boards/shields/*/Kconfig.shield"
+osource "C:/Users/eivin/ncs/v1.5.1/nrf/boards/shields/*/Kconfig.shield"
+osource "C:/Users/eivin/ncs/v1.5.1/zephyr/boards/shields/*/Kconfig.shield"
+osource "C:/Users/eivin/ncs/v1.5.1/zephyr/boards/shields/*/Kconfig.shield"

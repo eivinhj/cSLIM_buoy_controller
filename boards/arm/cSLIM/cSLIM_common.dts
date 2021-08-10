@@ -1,0 +1,315 @@
+/*
+ * Copyright (c) 2018-2020 Nordic Semiconductor ASA
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/ {
+	model = "cSLIM";
+	compatible = "nordic,cSLIM";
+
+	chosen {
+		zephyr,console = &uart0;
+		zephyr,shell-uart = &uart0;
+		zephyr,uart-mcumgr = &uart0;
+	};
+
+	leds {
+		compatible = "gpio-leds";
+		led0: led_0 {
+			gpios = <&gpio0 2 0>;
+			label = "Red LED 1";
+		};
+		led1: led_1 {
+			gpios = <&gpio0 3 0>;
+			label = "Yellow LED 2";
+		};
+		led2: led_2 {
+			gpios = <&gpio0 4 0>;
+			label = "Green LED 3";
+		};
+		led3: led_3 {
+			gpios = <&gpio0 5 0>;
+			label = "Blue LED 4";
+		};
+	};
+
+	chipselect {
+		compatible = "gpio-leds";
+		cs0: cs_gps {
+			gpios = <&gpio0 10 0>;
+			label = "CS GPS";
+		};
+		cs1: cs_sd {
+			gpios = <&gpio0 7 (GPIO_ACTIVE_LOW)>;
+			label = "CS SD Card";
+		};
+		cs2: cs_lora {
+			gpios = <&gpio0 20 (GPIO_ACTIVE_LOW)>;
+			label = "CS LoRa";
+		};
+		cs3: cs_display {
+			gpios = <&gpio0 22 (GPIO_ACTIVE_HIGH)>;
+			label = "CS Display";
+		};
+		cs4: cs_fram {
+			gpios = <&gpio0 25 (GPIO_ACTIVE_LOW)>;
+			label = "CS_FRAM";
+		};
+	};
+
+	sd_gpio {
+		compatible = "gpio-leds";
+			sdenable: sd_enable {
+				gpios = <&gpio0 6 0>;
+				label = "SD Enable";
+			};
+	};
+
+	gps_gpio {
+		compatible = "gpio-leds";
+			gpsenable: gps_enable {
+				gpios = <&gpio0 12 0>;
+				label = "GPS Enable";
+			};
+			gpstimepulse: gps_timepulse {
+				gpios = <&gpio0 27 (GPIO_PULL_UP | GPIO_ACTIVE_HIGH)>;
+				label = "GPS Timepulse";
+			};
+	};
+
+	rtc_gpio {
+		compatible = "gpio-leds";
+			rtcnint: rtc_nint {
+				gpios = <&gpio0 3 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+				label = "RTC nINT";
+			};
+			rtcclkout: rtc_clkout {
+				gpios = <&gpio0 26 (GPIO_PULL_UP | GPIO_ACTIVE_HIGH)>;
+				label = "RTC ClkOut";
+			};
+	};
+
+	rs485_gpio {
+		compatible = "gpio-leds";
+			rs485re: rs485_re {
+				gpios = <&gpio0 14 0>;
+				label = "RS485 RE";
+			};
+			rs485de: rs485_de {
+				gpios = <&gpio0 15 0>;
+				label = "RS485 DE";
+			};
+			rs485rx: rs485_rx {
+				gpios = <&gpio0 0 GPIO_PULL_UP>;
+				label = "RS485 RX";
+			};
+	};
+
+	rs232_gpio {
+		compatible = "gpio-leds";
+			rs232nshdn: rs232_nshdn {
+				gpios = <&gpio0 11 0>;
+				label = "RS232 nSHDN";
+			};
+	};
+
+	wlr089u0_gpio {
+		compatible = "gpio-leds";
+		wlr089u0nen: wlr089u0_nen {
+				gpios = <&gpio0 5 0>;
+				label = "WLR89U0 nSHDN";
+			};
+	};
+
+	pwmleds {
+		compatible = "pwm-leds";
+		pwm_led0: pwm_led_0 {
+			pwms = <&pwm0 2>;
+		};
+	};
+
+	buttons {
+		compatible = "gpio-keys";
+		button0: button_0 {
+			gpios = <&gpio0 6 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+			label = "Switch 1";
+		};
+		button1: button_1 {
+			gpios = <&gpio0 2 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+			label = "Switch 2";
+		};
+
+	};
+
+	/* These aliases are provided for compatibility with samples */
+	aliases {
+		led0 = &led0;
+		led1 = &led1;
+		led2 = &led2;
+		led3 = &led3;
+		pwm-led0 = &pwm_led0;
+		sw0 = &button0;
+		sw1 = &button1;
+		//sw2 = &button0;
+		//sw3 = &button1;
+		cs0 = &cs0;
+		cs1 = &cs1;
+		cs2 = &cs2;
+		cs3 = &cs3;
+		cs4 = &cs4;
+		adcctrl = &adc;
+		uart0 = &uart0;
+		uart1 = &uart1;
+		uart2 = &uart2;
+		rs485re = &rs485re;
+		rs485de = &rs485de;
+		sdenable = &sdenable;
+		gpstimepulse = &gpstimepulse;
+		gpsenable = &gpsenable;
+		rtcclkout = &rtcclkout;
+		rtcnint = &rtcnint;
+		rs232nshdn = &rs232nshdn;
+		wlr089u0nen = &wlr089u0nen;
+		i2c2 = &i2c2;
+		timer2 = &timer2;
+	};
+};
+
+&adc {
+	status = "okay";
+};
+
+&gpiote {
+	status = "okay";
+};
+
+&gpio0 {
+	status = "okay";
+};
+
+&uart0 {
+	status = "okay";
+	current-speed = <115200>;
+	tx-pin = <9>;
+	rx-pin = <8>;
+    /delete-property/ rts-pin;
+    /delete-property/ cts-pin;
+};
+
+&uart1 {
+	status = "okay";
+	current-speed = <115200>;
+	tx-pin = <1>;
+	rx-pin = <0>;
+};
+
+&uart2 {
+	status = "disabled";
+	current-speed = <115200>;
+	tx-pin = <24>;
+	rx-pin = <23>;
+};
+
+&i2c2 {
+	compatible = "nordic,nrf-twim";
+	status = "okay";
+	sda-pin = <30>;
+	scl-pin = <31>;
+};
+
+&pwm0 {
+	status = "okay";
+	ch0-pin = <2>;
+};
+
+&spi3 {
+	compatible = "nordic,nrf-spim";
+	status = "okay";
+	sck-pin = <19>;
+	mosi-pin = <18>;
+	miso-pin = <17>;
+	clock-frequency = <1000000>;
+	cs-gpios = <&gpio0 7 GPIO_ACTIVE_LOW>, <&gpio0 25 GPIO_ACTIVE_LOW>; 
+	sdhc0: sdhc@0 {
+		compatible = "zephyr,mmc-spi-slot";
+		reg = <0>;
+		status = "okay";
+		label = "SDHC0";
+		spi-max-frequency = <1000000>;
+	};
+};
+
+&timer0 {
+	status = "okay";
+};
+
+&timer1 {
+	status = "okay";
+};
+
+&timer2 {
+	status = "okay";
+};
+
+
+&flash0 {
+	/*
+	 * For more information, see:
+	 * https://docs.zephyrproject.org/latest/guides/dts/legacy-macros.html#legacy-flash-partitions
+	 */
+	partitions {
+		compatible = "fixed-partitions";
+		#address-cells = <1>;
+		#size-cells = <1>;
+
+		boot_partition: partition@0 {
+			label = "mcuboot";
+			reg = <0x00000000 0x10000>;
+		};
+		slot0_partition: partition@10000 {
+			label = "image-0";
+		};
+		slot0_ns_partition: partition@50000 {
+			label = "image-0-nonsecure";
+		};
+		slot1_partition: partition@80000 {
+			label = "image-1";
+		};
+		slot1_ns_partition: partition@c0000 {
+			label = "image-1-nonsecure";
+		};
+		scratch_partition: partition@f0000 {
+			label = "image-scratch";
+			reg = <0x000f0000 0xa000>;
+		};
+		storage_partition: partition@fa000 {
+			label = "storage";
+			reg = <0x000fa000 0x00006000>;
+		};
+	};
+};
+
+/ {
+
+	reserved-memory {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		ranges;
+
+		sram0_s: image_s@20000000 {
+			/* Secure image memory */
+		};
+
+		sram0_bsd: image_bsd@20010000 {
+			/* BSD (shared) memory */
+		};
+
+		sram0_ns: image_ns@20020000 {
+			/* Non-Secure image memory */
+		};
+	};
+};
+
+/* Include partition configuration file */
+#include "cSLIM_partition_conf.dts"
